@@ -3,8 +3,8 @@
   $menuRequisitos  = "";
   $menuProfessores = "";
   $mapa = "";
+  $calendario = "";
   $controle = "";
-
 
   if (isset($menuSelected) && $menuSelected == 3) {
     $menuProfessores = "selected";
@@ -14,6 +14,8 @@
     $mapa = "selected";
   }else if (isset($menuSelected) && $menuSelected == 5){
     $controle = "selected";
+  }else if (isset($menuSelected) && $menuSelected == 6){
+    $calendario = "selected";
   }else{
     $menuDisciplinas = "selected";
   }
@@ -34,8 +36,11 @@
     <a href="mapa.php">
       <li class="<?= $mapa ?>">Mapa</li>
     </a>
+    <a href="calendario.php">
+      <li class="<?= $calendario ?>">Calendário</li>
+    </a>
     <!-- <li>Atividades Desenvolvidas</li> -->
-    <?php 
+    <?php
       if (isset($_SESSION['ativo']) && $_SESSION['ativo'] == 1){
         include("aux-files/controle.html");
       }
