@@ -1,0 +1,76 @@
+/*!
+ *  Calendário para o Centro Acadêmico Pata do Bisão
+ *  Baseado no exemplo disponível em:
+ *
+ *  * FullCalendar v1.6.2 Stylesheet
+ *  * Docs & License: http://arshaw.com/fullcalendar/
+ *  * (c) 2013 Adam Shaw
+ * 
+ */
+
+.fc {
+    direction: ltr;
+    text-align: left;
+}
+
+.fc table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html .fc,
+.fc table {
+    font-size: 1em;
+}
+
+.fc td,
+.fc th {
+    padding: 0;
+    vertical-align: top;
+}
+
+.fc table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* Header -------------- */
+
+.fc-header td {
+    white-space: nowrap;
+}
+
+.fc-header-left {
+    width: 25%;
+    text-align: left;
+}
+
+.fc-header-right {
+    width: 25%;
+    text-align: right;
+}
+
+.fc-header-title {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.fc-header-title h2 {
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.fc .fc-header-space {
+    padding-left: 10px;
+}
+
+.fc-header .fc-button {
+    margin-bottom: 1em;
+    vertical-align: top;
+}
+
+/* buttons edges butting together */
+.fc-header .fc-button {
+    margin-right: -1px
+}
