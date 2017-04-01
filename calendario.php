@@ -5,11 +5,11 @@
   <?php include "header.php"; ?>
   <link href='fullcalendar/fullcalendar.css' rel='stylesheet' />
   <link href='fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
-	
+
   <!--jQuery-->
   <script src='jquery/jquery-1.9.1.min.js'></script>
   <script src='jquery/jquery-ui-1.10.2.custom.min.js'></script>
-	
+
   <!--FullCalendar-->
   <script src='fullcalendar/fullcalendar.min.js'></script>
   <script type="text/javascript">
@@ -17,7 +17,7 @@
   /*
     jQuery document ready
   */
-		
+
   $(document).ready(function()
   {
   /*
@@ -30,7 +30,7 @@
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-			
+
     /*
         Initialize fullCalendar and store into variable.
         Why in variable?
@@ -155,24 +155,26 @@ selectable: true,
 <style type="text/css">
     body
     {
-    margin-top: 40px;
+    margin-top: 0px;
     text-align: center;
     font-size: 14px;
     font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
     }
     #calendar
     {
-    width: 900px;
+    width: 700px;
     margin: 0 auto;
+    margin-top: 10px;
     }
-  </style>	
+  </style>
 </head>
 <body>
   <?php session_start(); $menuSelected = 6; include "menu.php" ?>
   <div id="content">
     <header>Calendário <?php include "login.php" ?></header>
+    <div id="main-content">
     <div id='calendar'></div>
-
+  </div>
   </div>
 </body>
 </html>

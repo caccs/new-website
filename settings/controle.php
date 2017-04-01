@@ -4,15 +4,14 @@
   <?php include "header.php"; ?>
 </head>
 <body>
-  <?php 
+  <?php
   session_start();
   require("../db.php");
-
+  $user = $_POST['user'];
   if (!isset($_SESSION['ativo'])){
     $db = new Db();
-    $usuario = $db->quote($_POST["user"]);
+    $usuario = $db->quote($user);
     $infos = $db->selectOne("SELECT * FROM professor WHERE nome = ".$usuario);
-
     if ($_POST["pass"] == $infos["senha"]){
       $_SESSION['ativo'] = 1;
       $_SESSION['nome'] = $_POST["user"];
@@ -30,7 +29,7 @@
       <section>
         <header>Painel administrativo dos professores</header>
         <ul>
-          <?php 
+          <?php
             if ($_SESSION["adm"] == 0){
           ?>
             <a href="ofertaConfig.php"><li>Configurações do Projeto Pedagogico</li></a>
@@ -38,7 +37,7 @@
             <a href="pedagConfig.php"><li>Configurações do Projeto Pedagogico</li></a>
           <?php } ?>
           <a href="paginaConfig.php"><li>Configurações das Paginas</li></a>
-          <?php 
+          <?php
             if ($_SESSION["adm"] == 0){
           ?>
           <?php }else{ ?>
