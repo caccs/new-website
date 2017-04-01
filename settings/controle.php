@@ -11,13 +11,13 @@
   if (!isset($_SESSION['ativo'])){
     $db = new Db();
     $usuario = $db->quote($_POST["user"]);
-    $infos = $db->selectOne("SELECT * FROM controle WHERE usuario = ".$usuario);
+    $infos = $db->selectOne("SELECT * FROM professor WHERE nome = ".$usuario);
 
     if ($_POST["pass"] == $infos["senha"]){
       $_SESSION['ativo'] = 1;
-      $_SESSION['user'] = $_POST["user"];
-      $_SESSION['id'] = $infos["id"];
-      $_SESSION["adm"] = $infos["adm"];
+      $_SESSION['nome'] = $_POST["user"];
+      $_SESSION['cod'] = $infos["codProfessor"];
+      $_SESSION["adm"] = 0;
     }else{
       header("Location: ../index.php");
     }
@@ -41,7 +41,6 @@
           <?php 
             if ($_SESSION["adm"] == 0){
           ?>
-            <a href="profConfig.php"><li>Configurações dos Professores</li></a>
           <?php }else{ ?>
             <a href="profConfigAdm.php"><li>Configurações dos Professores</li></a>
           <?php } ?>
